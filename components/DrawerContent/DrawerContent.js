@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, FlatList } from 'react-native'
+import { Text, FlatList, TouchableOpacity } from 'react-native'
 import { Container, Header, Content, ListItem, Left, Icon } from 'native-base'
 
 import style from './style'
@@ -18,9 +18,12 @@ const DrawerContent = (props) => (
                 data={props.items.map(item => item.routeName)}
                 keyExtractor={(_, index) => index.toString()}
                 renderItem={({ item }) => (
-                    <ListItem noBorder>
-                        <Text>{item}</Text>
-                    </ListItem>
+                    <TouchableOpacity>
+                        <ListItem noBorder
+                            onPress={() => props.navigation.navigate(item)}>
+                            <Text>{item}</Text>
+                        </ListItem>
+                    </TouchableOpacity>
                 )} />
         </Content>
     </Container>
