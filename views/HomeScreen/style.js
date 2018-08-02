@@ -1,4 +1,4 @@
-import { StyleSheet, StatusBar, Platform } from 'react-native'
+import { StyleSheet } from 'react-native'
 
 import {
   headerPurple,
@@ -8,13 +8,6 @@ import {
 } from '../../styles/colors'
 
 export default StyleSheet.create({
-  androidHeader: {
-    ...Platform.select({
-      android: {
-        paddingTop: StatusBar.currentHeight
-      }
-    })
-  },
   header: {
     backgroundColor: headerPurple,
     height: 90,

@@ -7,6 +7,7 @@ import Swiper from 'react-native-swiper'
 import RecommededCard from '../../components/RecommendedCard'
 
 import style from './style'
+import commonStyle from '../../styles/common'
 
 import swiper_2 from '../../assets/swiper_2.jpg'
 import swiper_3 from '../../assets/swiper_3.jpg'
@@ -24,9 +25,11 @@ class HomeScreen extends Component {
     return (
       <Container>
         {/* Header */}
-        <Header style={[style.header, style.androidHeader]}>
+        <Header style={[style.header, commonStyle.androidHeader]}>
           <Left style={style.headerLeft}>
-            <Icon name="md-menu" style={style.headerMenuIcon} />
+            <Icon name="md-menu"
+              style={style.headerMenuIcon}
+              onPress={() => this.props.navigation.openDrawer()} />
             <FAIcon name="amazon" style={style.headerAmazonIcon} />
           </Left>
           <Right>
